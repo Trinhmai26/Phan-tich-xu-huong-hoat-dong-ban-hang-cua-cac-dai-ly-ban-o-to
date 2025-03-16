@@ -11,10 +11,8 @@ Mục tiêu của đề tài này là phân tích dữ liệu bán hàng của c
 - Trực quan hóa dữ liệu bằng các biểu đồ để phân tích xu hướng bán hàng.
 - Phân cụm K-Means để nhóm các loại xe theo đặc điểm giá bán và số km đã đi.
 - Dự đoán xu hướng thị trường sử dụng mô hình Machine Learning (Random Forest).
-- So sánh hiệu suất giữa các mô hình ML khác nhau như Linear Regression, Decision Tree, XGBoost.
 - Xác định yếu tố ảnh hưởng đến giá bán xe thông qua các mô hình thống kê và Machine Learning.
 - Dự đoán doanh số bán hàng theo từng thương hiệu và loại xe để có kế hoạch kinh doanh phù hợp.
-- Triển khai dashboard trực quan để theo dõi dữ liệu thời gian thực bằng Streamlit hoặc Dash.
 ## **Công nghệ sử dụng** 
 - Ngôn ngữ lập trình: Python
 - Thư viện phân tích dữ liệu: Pandas, NumPy
