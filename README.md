@@ -1,3 +1,4 @@
+# **Phân Tích Xu Hướng Bán Hàng Của Các Đại Lý Ô Tô**
 ## **Giới thiệu** 
 Trong bối cảnh thị trường ô tô ngày càng cạnh tranh, việc phân tích xu hướng bán hàng giúp các đại lý tối ưu hóa chiến lược kinh doanh và dự đoán nhu cầu khách hàng. Dự án này sử dụng Python,
 Spark và Machine Learning để xử lý dữ liệu bán hàng, trực quan hóa thông tin về giá xe, số km đã đi, tỷ lệ xe mới/cũ và xu hướng doanh số theo năm. Ngoài ra, phương pháp phân cụm K-Means giúp 
