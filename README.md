@@ -21,43 +21,43 @@ Mục tiêu của đề tài này là phân tích dữ liệu bán hàng của c
 - Machine Learning: Scikit-learn (RandomForest, K-Means, XGBoost)
 - Mô hình hồi quy và dự đoán: Random Forest, Decision Tree, Linear Regression
 - Dashboard phân tích dữ liệu: Streamlit, Dash
-## **Cài đặt** 
-**1. Cài đặt **
+## **Phần 1:Cài đặt** 
+**1.1 Cài đặt **
 Chạy lệnh sau trong python:
 ```
 from pyspark.sql import SparkSession
 # Khởi tạo Spark
 spark = SparkSession.builder.appName("CarDataAnalysis").getOrCreate()
 ```
-**2. Chuyển đổi dữ liệu Spark thành Pandas để xử lý**
+**1.2. Chuyển đổi dữ liệu Spark thành Pandas để xử lý**
 ```
 df = df_spark.toPandas()
 ```
 ## **Hướng dẫn thực hiện**
-## Phần 1: Tạo biểu đồ trực quan hóa
-**1.1. Cài đặt thư viện cần thiết**
+## Phần 2: Tạo biểu đồ trực quan hóa
+**2.1. Cài đặt thư viện cần thiết**
 ```
 pip install pandas numpy matplotlib seaborn pyspark scikit-learn
 ```
-**1.. Khởi chạy SparkSession**
+**2.2. Khởi chạy SparkSession**
 ```
  from pyspark.sql import SparkSession
 spark = SparkSession.builder.appName("CarDataAnalysis").getOrCreate()
 ```
-**1.3. Đọc dữ liệu từ tệp CSV**
+**2.3. Đọc dữ liệu từ tệp CSV**
 ```
 file_path = "data/car_sales.csv"
 df_spark = spark.read.csv(file_path, header=True, inferSchema=True)
 df = df_spark.toPandas()
 ```
-**1.4. Tiền xử lý dữ liệu**
+**2.4. Tiền xử lý dữ liệu**
 ```
 df.dropna(inplace=True)
 df["Price"] = pd.to_numeric(df["Price"], errors="coerce")
 df["Mileage"] = pd.to_numeric(df["Mileage"], errors="coerce")
 df["Year"] = pd.to_numeric(df["Year"], errors="coerce")
 ```
-**1.5. Trực quan hóa dữ liệu**
+**2.5. Trực quan hóa dữ liệu**
 ```
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -68,7 +68,7 @@ plt.xticks(rotation=45)
 plt.title("Số lượng xe theo hãng")
 plt.show()
 ```
-**1.5. 6. Phân cụm K-Means**
+**2.6. Phân cụm K-Means**
 ```
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
@@ -78,7 +78,7 @@ X_scaled = scaler.fit_transform(X_cluster)
 kmeans = KMeans(n_clusters=3, random_state=42)
 df['Cluster'] = kmeans.fit_predict(X_scaled)
 ```
-**1.7. Dự đoán xu hướng bán hàng**
+**2.7. Dự đoán xu hướng bán hàng**
 ```
 from sklearn.ensemble import RandomForestRegressor
 X_sales = df[["Year"]]
@@ -102,7 +102,7 @@ Kết quả
 - Dự báo doanh số bán xe theo năm: Xây dựng mô hình Machine Learning để dự đoán lượng xe tiêu thụ trong tương lai.
   ![image](https://github.com/user-attachments/assets/7424bc89-f5e9-4c77-8808-6b9cdfeb1f01)
 
-## **Phân tích mô hình RandomForestRegressor**
+## **Phần 33:Phân tích mô hình RandomForestRegressor**
 Lý do chọn mô hình: RandomForestRegressor là một thuật toán học máy mạnh mẽ, giúp dự đoán dữ liệu phi tuyến tính, đồng thời giảm thiểu
 hiện tượng quá khớp (overfitting) nhờ việc tổng hợp kết quả từ nhiều cây quyết định (Decision Trees).
 Đánh giá mô hình:
